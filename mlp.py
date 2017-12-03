@@ -46,7 +46,11 @@ tfidf2 = CountVectorizer(ngram_range=(1, 1),
                          lowercase = True, 
                          max_features = 5000)
 
+<<<<<<< HEAD
 clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(16, 16, 16), random_state=1)
+=======
+clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=1)
+>>>>>>> ed1ad2d848f601f09c18ba4d3c7a98f43c2ea612
 model_clf = Pipeline([('tfidf2', tfidf2), ('clf', clf)])
 
 results_clf = cross_validate(model_clf, X_train, y_train, cv=kfolds, scoring=scoring, n_jobs=-1)
